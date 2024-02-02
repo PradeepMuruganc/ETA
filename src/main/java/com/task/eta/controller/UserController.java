@@ -1,6 +1,7 @@
 package com.task.eta.controller;
 
 
+import com.task.eta.DTO.LoginDTO;
 import com.task.eta.DTO.UserDTO;
 import com.task.eta.Exception.UserCreationException;
 import com.task.eta.service.UserService;
@@ -24,5 +25,12 @@ public class UserController {
         Integer id= userService.adduser(userDTO);
         String responseMsg="Successfully Registerd !\nYour UserId : " +id;
         return new ResponseEntity<>( responseMsg, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDTO){
+        LoginMessage loginMessage=userService.loginU
+        ser(loginDTO);
+        return new ResponseEntity.ok(loginMessage);
     }
 }

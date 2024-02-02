@@ -50,20 +50,4 @@ public class UserEntity {
     @Column(name = "created_date",nullable = false)
     private Timestamp created_date;
 
-
-
-//    @Override
-//    public String toString() {
-//        return "userEntity{" +
-//                "id=" + id +
-//                ", username='" + username + '\'' +
-//                ", email='" + email + '\'' +
-//                ", password='" + password + '\'' +
-//                ", status='" + status + '\'' +
-//                ", created_by='" + created_by + '\'' +
-//                ", updated_by='" + updated_by + '\'' +
-//                ", updated_date='" + updated_date + '\'' +
-//                ", created_date='" + created_date + '\'' +
-//                '}';
-//    }
 }

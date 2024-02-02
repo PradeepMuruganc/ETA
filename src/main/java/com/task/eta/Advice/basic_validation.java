@@ -16,16 +16,6 @@ public class basic_validation {
 
     static final String ERRMESSAGE = "Err Message";
 
-    //    @ResponseStatus(HttpStatus.EXPECTATION_FAILED)
-//    @ExceptionHandler(.class)
-//    public Map<String, String> handleTransactionException(UsernameInvalidException exception){
-//
-//        Map<String, String> errMap = new HashMap<>();
-//        errMap.put(EXCEPTION , " : Invalid credentials to make transaction");
-//        errMap.put(ERRMESSAGE + " : ", exception.getMessage());
-//
-//        return errMap;
-//    }
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleInvalidArgument(MethodArgumentNotValidException exception) {

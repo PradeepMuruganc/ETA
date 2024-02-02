@@ -1,5 +1,6 @@
 package com.task.eta.service.impl;
 
+import com.task.eta.DTO.LoginDTO;
 import com.task.eta.DTO.UserDTO;
 import com.task.eta.Exception.UserCreationException;
 import com.task.eta.entity.UserEntity;
@@ -38,5 +39,10 @@ public class UserImpl implements UserService {
             userEntity = userRepo.save(userEntity);
             return userEntity.getId();
         }
+    }
+
+    @Override
+    public LoginMessage loginUser(LoginDTO loginDTO) {
+        return null;
     }
 }
