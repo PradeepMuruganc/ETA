@@ -1,9 +1,14 @@
 package com.task.eta.response;
 
-import org.hibernate.engine.spi.Status;
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class LoginResponse {
     String message;
-    Status. status;
-    public LoginResponse(String message,)
+    String status;
 }

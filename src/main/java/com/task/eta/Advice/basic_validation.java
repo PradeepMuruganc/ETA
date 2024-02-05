@@ -1,6 +1,9 @@
 package com.task.eta.Advice;
 
+import com.task.eta.Exception.LoginException;
+import com.task.eta.Exception.LoginPasswordException;
 import com.task.eta.Exception.UserCreationException;
+import com.task.eta.Exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -31,6 +34,30 @@ public class basic_validation {
     @ResponseStatus(HttpStatus.ALREADY_REPORTED)
     @ExceptionHandler(UserCreationException.class)
     public Map<String,String> userCreationException(UserCreationException error){
+
+        Map<String,String> errObj=new HashMap<>();
+        errObj.put("ERROR:",error.getMessage());
+        return errObj;
+    }
+    @ResponseStatus(HttpStatus.ALREADY_REPORTED)
+    @ExceptionHandler(LoginException.class)
+    public Map<String,String> loginExceptionClass(LoginException error){
+
+        Map<String,String> errObj=new HashMap<>();
+        errObj.put("ERROR:",error.getMessage());
+        return errObj;
+    }
+    @ResponseStatus(HttpStatus.ALREADY_REPORTED)
+    @ExceptionHandler(LoginPasswordException.class)
+    public Map<String,String> loginPasswordExceptionClass(LoginPasswordException error){
+
+        Map<String,String> errObj=new HashMap<>();
+        errObj.put("ERROR:",error.getMessage());
+        return errObj;
+    }
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(UserNotFoundException.class)
+    public Map<String,String> userNotFoundException(UserNotFoundException error){
 
         Map<String,String> errObj=new HashMap<>();
         errObj.put("ERROR:",error.getMessage());

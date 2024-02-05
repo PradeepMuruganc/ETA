@@ -17,6 +17,9 @@ import java.sql.Timestamp;
 @Data
 @Component
 public class UserDTO {
+//    @NotBlank
+    private int id;
+
     @NotBlank(message = "Please enter the Username!")
     @Pattern(regexp = "^[a-zA-Z0-9_]+$",message = "Special characters not allowed !")
     @Size(min = 3,max = 20,message = "Your username size should be between 3 and 20 and should not have special characters!")
@@ -30,11 +33,11 @@ public class UserDTO {
 
     private Status status;
 
-    private String created_by;
+    private String createdBy;
 
-    private String updated_by;
-    private Timestamp created_date;
-    private Timestamp updated_date;
+    private String updatedBy;
+    private Timestamp createdDate;
+    private Timestamp updatedDate;
 
 }
 
